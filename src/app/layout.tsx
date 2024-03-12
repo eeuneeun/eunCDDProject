@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "./_store/StoreProvider";
+import { Suspense } from "react";
+import Loading from "./_components/common/loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +20,10 @@ export default function RootLayout({
   return (
     <>
       <StoreProvider>
-        <html lang="en">
-          <body className={inter.className}>{children}</body>
+        <html lang="ko">
+          <Suspense fallback={<Loading />}>
+            <body className={inter.className}>{children}</body>
+          </Suspense>
         </html>
       </StoreProvider>
     </>

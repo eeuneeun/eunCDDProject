@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Button } from "@stories/Button";
 
-export default function Home() {
+export default function Signup() {
   return (
     <>
       <main>
