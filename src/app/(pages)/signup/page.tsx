@@ -7,8 +7,9 @@ export default function Signup() {
   return (
     <>
       <main>
-        <Image src={"@public/next.svg"} alt="이미지" />
-        <Button primary={true} label="GET PIZZA DATAS" />
+        <h2>회원가입 페이지</h2>
+
+        <Button primary={true} label="회원가입" />
       </main>
     </>
   );
