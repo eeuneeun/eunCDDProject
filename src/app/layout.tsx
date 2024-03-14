@@ -22,7 +22,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const menuList: IGnbProps = {
-    menuList: ["메인", "메뉴관리", "회원관리", "통계관리"],
+    menuList: [
+      { depth1: "대시보드", isOpenDepth1: false },
+      {
+        depth1: "제품관리",
+        depth2: [
+          "제품",
+          "토핑",
+          "하프&하프 관리",
+          "도미노콘/상품권 관리",
+          "일시중지메뉴",
+          "쇼핑몰 상품코드 내역",
+          "알레르기 유발성분 관리",
+          "난수쿠폰 생성관리",
+        ],
+        isOpenDepth1: true,
+      },
+      { depth1: "회원관리", isOpenDepth1: false },
+      { depth1: "통계관리", isOpenDepth1: true },
+    ],
   };
 
   return (

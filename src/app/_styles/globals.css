@@ -158,7 +158,7 @@ a {
 
 /* GNB */
 .gnb-wrap {
-  width: 180px;
+  width: 200px;
   height: calc(100vh - 60px);
   position: absolute;
   top: 60px;
@@ -171,19 +171,42 @@ a {
 }
 .gnb > li {
   width: 100%;
-  height: 50px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-left: 30px;
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+}
+.gnb > li.active {
+  border-left: 10px solid #ddd;
+  padding-bottom: 0;
+}
+
+.sub-menu {
+  width: calc(100% + 30px);
+  padding: 0;
+  margin-top: 15px;
+  margin-left: -15px;
+  background: #eee;
+}
+.sub-menu li {
+  width: 100%;
+  padding: 15px 15px 15px 20px;
+  font-size: 13px;
+}
+.sub-menu li:hover {
+  background-color: #999999;
+  cursor: pointer;
 }
 
 /* MAIN */
 .main-wrap {
-  width: calc(100% - 180px);
+  width: calc(100% - 200px);
   height: calc(100vh - 60px);
   position: absolute;
   top: 60px;
-  left: 180px;
+  left: 200px;
 }
