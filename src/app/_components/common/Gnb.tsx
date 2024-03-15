@@ -1,13 +1,20 @@
+import Link from "next/link";
 import * as React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export interface IMenuObj {
+  name: string;
+  link: string;
+}
+
+export interface IMenuGrroupObj {
   depth1: string;
-  depth2?: string[] | null;
+  depth2?: IMenuObj[] | null;
   isOpenDepth1: boolean;
 }
 
 export interface IGnbProps {
-  menuList: IMenuObj[];
+  menuList: IMenuGrroupObj[];
 }
 
 export default function Gnb(Gnbprops: IGnbProps) {
@@ -20,7 +27,9 @@ export default function Gnb(Gnbprops: IGnbProps) {
             {menu.depth2 && (
               <ol className="sub-menu">
                 {menu.depth2.map((depth2) => (
-                  <li key={menu.depth1}>{depth2}</li>
+                  <li key={uuidv4()}>
+                    <Link href={depth2.link}>{depth2.name}</Link>
+                  </li>
                 ))}
               </ol>
             )}

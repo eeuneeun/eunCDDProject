@@ -27,14 +27,38 @@ export default function RootLayout({
       {
         depth1: "제품관리",
         depth2: [
-          "제품",
-          "토핑",
-          "하프&하프 관리",
-          "도미노콘/상품권 관리",
-          "일시중지메뉴",
-          "쇼핑몰 상품코드 내역",
-          "알레르기 유발성분 관리",
-          "난수쿠폰 생성관리",
+          {
+            name: "제품",
+            link: "/products",
+          },
+          {
+            name: "토핑",
+            link: "/products",
+          },
+          {
+            name: "하프&하프 관리",
+            link: "/products",
+          },
+          {
+            name: "도미노콘/상품권 관리",
+            link: "/products",
+          },
+          {
+            name: "일시중지메뉴",
+            link: "/products",
+          },
+          {
+            name: "쇼핑몰 상품코드 내역",
+            link: "/products",
+          },
+          {
+            name: "알레르기 유발성분 관리",
+            link: "/products",
+          },
+          {
+            name: "난수쿠폰 생성관리",
+            link: "/products",
+          },
         ],
         isOpenDepth1: true,
       },
