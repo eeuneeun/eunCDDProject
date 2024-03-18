@@ -1,4 +1,4 @@
-import { Header, HeaderProps } from "@/app/_components/common/Header";
+import { Header } from "@/app/_components/common/Header";
 
 export default function SubLayout({
   children,
