@@ -4,21 +4,17 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./auth/authSlice";
 import logger from "redux-logger";
+import { pageMenusSlice } from "./pageMenus/menuSlice";
 
 // rootReducer : 여러 Slice 조각들을 합쳐서 담아줌
-const rootReducer = combineSlices(authSlice);
+const rootReducer = combineSlices(authSlice, pageMenusSlice);
 // RootState :  root reducer 로 부터 유래함
 export type RootState = ReturnType<typeof rootReducer>;
 
-// `makeStore` encapsulates the store configuration to allow
-// creating unique store instances, which is particularly important for
-// server-side rendering (SSR) scenarios. In SSR, separate store instances
-// are needed for each request to prevent cross-request state pollution.
+// # REDUX STORE 생성
 export const makeStore = () => {
   return configureStore({
     reducer: rootReducer,
-    // Adding the api middleware enables caching, invalidation, polling,
-    // and other useful features of `rtk-query`.
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   });
 };

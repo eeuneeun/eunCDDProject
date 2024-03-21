@@ -29,7 +29,7 @@ const authState: authStateType = {
 };
 
 export const authSlice = createSlice({
-  name: "counter",
+  name: "auth",
   initialState: authState,
   reducers: (create) => ({
     loginChk: create.reducer((state) => {
